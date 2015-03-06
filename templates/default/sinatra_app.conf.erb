@@ -8,9 +8,10 @@
     CustomLog <%= @node[:apache][:log_dir] %>/access-<%= @params[:server_name] %>.log combined
     
     <Directory <%= "#{@params[:docroot]}/public" %>>
-        Options FollowSymLinks -MultiViews
+        Options +FollowSymLinks -MultiViews
         AllowOverride All
         Order allow,deny
         Allow from all
+        Require all granted
     </Directory>
 </VirtualHost>

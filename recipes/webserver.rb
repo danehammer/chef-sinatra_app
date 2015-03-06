@@ -9,7 +9,7 @@
 
 include_recipe 'apache2'
 include_recipe 'git'
-include_recipe 'sinatra_app::brightbox-passenger'
+include_recipe 'passenger_apache2::mod_rails'
 
 app_name = node[:sinatra_app][:server_name]
 
